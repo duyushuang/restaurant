@@ -6,4 +6,6 @@ public class EatPoint : MonoBehaviour {
 	public bool isFree = false;
 
 	public GameObject lookPoint;
+
+	public int orderId;
 }

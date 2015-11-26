@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class ConfigMgr{
 	
 	private static Dictionary<string, string> menuDic = new Dictionary<string, string>();
+	private static List<string> menuName = new List<string>();
 
 	public void LoadXml(string fileName)
 	{
@@ -29,7 +30,13 @@ public class ConfigMgr{
 				contains += xl2.GetAttribute("quantity") + ":" + xl2.InnerText + ",";
 			}
 			menuDic.Add(name, contains);
+			menuName.Add(name);
 		}
+	}
+
+	public static List<string> GetMenuName()
+	{
+		return menuName;
 	}
 
 	public static Dictionary<string, string> GetMenuDic()

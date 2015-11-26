@@ -13,14 +13,13 @@ public class BuyMgr : MonoBehaviour {
 	public Transform player;
 	public Transform SaleNPC;
 
+	public static Dictionary<string, int> bagDic = new Dictionary<string, int>();
 
 	public void Buy(GameObject product)
 	{
 		UISprite uis = product.GetComponent<UISprite>();
 
 		string name  = uis.spriteName;
-
-		print(name);
 
 		for(int i = 0; i < cells.Length; i++)
 		{
@@ -31,6 +30,7 @@ public class BuyMgr : MonoBehaviour {
 				{
 					
 					g.AddCount(1);
+					bagDic[name]++;
 					return;
 				}
 			}
@@ -43,6 +43,7 @@ public class BuyMgr : MonoBehaviour {
 				GameObject go = NGUITools.AddChild(cells[i],item);
 				go.GetComponent<UISprite>().spriteName = name;
 				go.transform.localPosition = Vector3.zero;
+				bagDic.Add(name, 1);
 				break;
 			}
 		}

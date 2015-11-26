@@ -2,13 +2,15 @@
 using System.Collections;
 
 public class CustomMgr : MonoBehaviour {
-
-	public GameObject[] eatPoints;
+	
 	public float moveSpeed = 2;
 
+	private GameObject[] eatPoints;
 	private Animator ani;
 	private bool needMove = false;
 	private int dirPoint;
+	private bool canOrder = true;
+
 	// Use this for initialization
 	void Start () {
 		eatPoints = GameObject.FindGameObjectsWithTag("Chair");
@@ -33,6 +35,13 @@ public class CustomMgr : MonoBehaviour {
 		if(needMove)
 		{
 			MoveToPoint(new Vector3(eatPoints[dirPoint].transform.position.x, transform.position.y, eatPoints[dirPoint].transform.position.z));
+		}
+		if(!needMove && canOrder)
+		{
+			canOrder = false;
+			UILabel orderLabel = GameObject.Find(eatPoints[dirPoint].GetComponent<EatPoint>().orderId.ToString() + "Label").GetComponent<UILabel>();
+			int t = Random.Range(0, ConfigMgr.GetMenuName().Count);
+			orderLabel.text = dirPoint.ToString() +  ":" + ConfigMgr.GetMenuName()[t];
 		}
 	}
 
@@ -61,4 +70,5 @@ public class CustomMgr : MonoBehaviour {
 		Vector3 dir = (p - transform.position).normalized;
 		transform.Translate (dir * Time.deltaTime * moveSpeed,Space.World);
 	}
+	
 }
