@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<menus>
+  <dish name="西红柿炒鸡蛋">
+    <item quantity="2">西红柿</item>
+    <item quantity="2">鸡蛋</item>
+  </dish>
+  <dish name="红烧牛肉">
+      <item quantity="2">牛肉</item>
+      <item quantity="2">辣椒</item>
+  </dish>
+  <dish name="炒土豆丝">
+      <item quantity="2">土豆</item>
+      <item quantity="2">大葱</item>
+      <item quantity="2">大蒜</item>
+  </dish>
+  <dish name="猪肉炖粉条">
+      <item quantity="2">猪肉</item>
+      <item quantity="2">粉条</item>
+  </dish>
+  <dish name="木须肉">
+      <item quantity="2">辣椒</item>
+      <item quantity="2">木耳</item>
+      <item quantity="2">羊肉</item>
+  </dish>
+  <dish name="鱼香肉丝">
+      <item quantity="2">胡萝卜</item>
+      <item quantity="2">猪肉</item>
+      <item quantity="2">辣椒</item>
+      <item quantity="2">木耳</item>
+  </dish>
+  <dish name="葱爆豆腐">
+      <item quantity="2">豆腐</item>
+      <item quantity="2">大葱</item>
+  </dish>
+  <dish name="大盘鸡">
+      <item quantity="2">鸡块</item>
+      <item quantity="2">辣椒</item>
+      <item quantity="2">土豆</item>
+  </dish>
+ 
+</menus>
